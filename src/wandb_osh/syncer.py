@@ -95,7 +95,7 @@ class WandbSyncer:
                             cf.unlink()
             if "PYTEST_CURRENT_TEST" in os.environ:
                 break
-            time.sleep(max(0.0, (time.time() - start_time) - self.wait))
+            time.sleep(max(0.0, self.wait - (time.time() - start_time)))
 
 
 def sync_dir(
